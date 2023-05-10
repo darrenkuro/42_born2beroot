@@ -36,7 +36,7 @@
 - `sudo addgroup <group>` to add user group.
 - `getent group <group>` to check the group.
 - `groups <user>` to check which groups a user belong to.
-- `sudo adduser <user>` to add a user. `sudo userdel <user>` to delete a user.
+- `sudo adduser <user>` to add a user. `sudo userdel -r <user>` to delete a user and all associated files (-r).
 - `sudo usermod -aG <group> <user>` add user to a group. Same as `sudo adduser <user> <group>`.
 
 #### What are the differences between `aptitude` and `apt`?
