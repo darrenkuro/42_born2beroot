@@ -39,6 +39,12 @@
 - `sudo adduser <user>` to add a user. `sudo userdel -r <user>` to delete a user and all associated files (-r).
 - `sudo usermod -aG <group> <user>` add user to a group. Same as `sudo adduser <user> <group>`.
 
+#### SSH
+
+- get ip `ip a`.
+- Network, use bridged adapter/eno2, on host machine `sh -p4242 dlu@10.15.248.42 (guest ip)`.
+
+
 #### What are the differences between `aptitude` and `apt`?
 
 They are both package managers for Debian-based Linux system, with minor differences, such that `aptitude` has text-based interface while `apt` has a command-line interface. Essentially, `aptitude` is a more complex version that is build on `apt` and is suitable for more advanced system administrators for more complex tasks. 
