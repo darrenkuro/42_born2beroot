@@ -9,13 +9,35 @@
     <img alt="commit" src="https://img.shields.io/github/last-commit/darrenkuro/42_born2beroot">
 </p>
 
-### Password
+#### sudo
 
-`vim /etc/login.defs`
+- `sudo visudo` to edit /etc/sudoers (sudo config) to ensure correct syntax and no multiple users editting at once. 
+- `/etc/sudoers.d` for addtional config files, these are read in alphabetical order, and can be editted with text editor directly.
+- Add `Defaults	passwd_tries=3` to limit to 3 password attempts.
+- Add `Defaults	log_input log_out` to record.
+- ~~In `/etc/rsyslog.d`, add a file `sudo.conf` with `auth,authpriv.* /var/log/sudo/sudo.log`.~~
+- Add `Defaults	logfile="/var/log/sudo/sudo.log"`
+- To restart, `sudo systemctl restart rsyslog`.
+- `Defaults requiretty` to force tty mode.
 
-`PASS_MAX_DAYS	30` -> if user doesn't change pw in 30 days, they can no longer log in
-`PASS_MIN_DAYS	2`
-`PASS_WARN_AGE	7`
+#### Password
+
+- `vim /etc/login.defs`
+
+- `PASS_MAX_DAYS	30` -> force user to change password every 30 days
+- `PASS_MIN_DAYS	2`
+- `PASS_WARN_AGE	7`
+- These won't apply to existing users; do it manually for them: `sudo chage -M 30 <user>` `sudo chage -m 2 <user>` `sudo chage -W 7 <user>`
+- Verify with `sudo chage -l <user>`
+- `/etc/security/pwquality.conf`
+
+#### Users
+
+- `sudo addgroup <group>` to add user group.
+- `getent group <group>` to check the group.
+- `groups <user>` to check which groups a user belong to.
+- `sudo adduser <user>` to add a user. `sudo userdel <user>` to delete a user.
+- `sudo usermod -aG <group> <user>` add user to a group. Same as `sudo adduser <user> <group>`.
 
 #### What are the differences between `aptitude` and `apt`?
 
