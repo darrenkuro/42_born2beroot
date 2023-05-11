@@ -44,6 +44,13 @@
 - get ip `ip a`.
 - Network, use bridged adapter/eno2, on host machine `sh -p4242 dlu@10.15.248.42 (guest ip)`.
 
+#### monitering.sh
+
+- #Architecture: `uname -a`.
+- #CPU physical: `lscpu | grep "Socket(s)" | awk -F': *' '{print $2}'`.
+- #vCPU: `nproc --all`
+- #Memory Usage: `$(free -m | awk '/^Mem:/ {print $3}')/$(free -m | awk '/^Mem:/ {print $2}')MB`. `free | awk '$1 == "Mem:" {printf("%.2f%%\n"), $3/$2 * 100}'`
+- #Disk Usage: 
 
 #### What are the differences between `aptitude` and `apt`?
 
