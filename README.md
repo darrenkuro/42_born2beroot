@@ -79,5 +79,5 @@ They are both package managers for Debian-based Linux system, with minor differe
 - `sudo crontab -e` to edit the cron tabs. `sudo systemctl disable cron` will stop cron from running at startup.
 - `lsblk` to view partitions.
 - `http://10.15.248.42:80` for lighttpd webserver.
-- `mysql -u admin -p`, `dlu42`; `show databases` for mariaDB. For wordpress, `dlu42` or `dlu@student.42berlin.de`.
+- `mysql -u admin -p`, `dlu42`; `show databases` for mariaDB. For wordpress, `dlu` or `dlu@student.42berlin.de`.
 - Additional service: `fail2ban`, as a security measure for SSH against brute force attacks. `sudo fail2ban-client status`.
