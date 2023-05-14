@@ -62,4 +62,14 @@ They are both package managers for Debian-based Linux system, with minor differe
 
 #### What is `AppArmor`?
 
+`AppArmor` is a security framework for Linux; it is a mandatory access control system that works alongside traditional discretionary access control mechanisms like file permissions. It allows admin to enfore detailed security policies for individual programs, it can specifiy what system resources (files, directories, sockets, etc.) a process can access and what operations it can perform.
 
+#### What is `cron`?
+
+`Cron` is a time-based job scheduler. It allows users to schedule and automate the execution of recurring tasks or commands at specified intervals. 
+
+#### Commands
+- `dpkg -l | grep <name>` to check a program is installed.
+- `sudo ufw status numbered` to get rules with numbers. `sudo ufw allow <port>` to add rules to allow that port connection. `sudo ufw delete <number>` to delete rules.
+- `sudo crontab -e` to edit the cron tabs. `sudo systemctl disable cron` will stop cron from running at startup.
+- `lsblk` to view partitions.
