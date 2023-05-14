@@ -68,8 +68,16 @@ They are both package managers for Debian-based Linux system, with minor differe
 
 `Cron` is a time-based job scheduler. It allows users to schedule and automate the execution of recurring tasks or commands at specified intervals. 
 
+#### LVM
+
+- `sudo vgrename <oldname> LVMGroup`.
+- `sudo swappoff /dev/LVMGroup-swap_1` to deactivate it, `sudo lvrename LVMGroup swap_1 swap` to rename. Update `/etc/fstab` with new name; then `sudo swapon /dev/LVMGroup/swap`.
+
 #### Commands
 - `dpkg -l | grep <name>` to check a program is installed.
 - `sudo ufw status numbered` to get rules with numbers. `sudo ufw allow <port>` to add rules to allow that port connection. `sudo ufw delete <number>` to delete rules.
 - `sudo crontab -e` to edit the cron tabs. `sudo systemctl disable cron` will stop cron from running at startup.
 - `lsblk` to view partitions.
+- `http://10.15.248.42:80` for lighttpd webserver.
+- `mysql -u admin -p`, `dlu42`; `show databases` for mariaDB. For wordpress, `dlu42` or `dlu@student.42berlin.de`.
+- Additional service: `fail2ban`, as a security measure for SSH against brute force attacks. `sudo fail2ban-client status`.
